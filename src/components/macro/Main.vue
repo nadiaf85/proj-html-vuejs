@@ -1,10 +1,12 @@
 <template>
 
-<section class="popular_dishes">
+<section>
     
     <MainDishes/>
-    <MainBanner/>
+    <MainBannerDiscount/>
     <MainMenuCategories/>
+    <MainBannerDownload/>
+    <MainLatestNews/>
     
 </section>
 
@@ -13,46 +15,26 @@
 
 <script>
 import MainDishes from '../sections/MainDishes.vue'
-import MainBanner from '../sections/MainBanner.vue'
+import MainBannerDiscount from '../sections/MainBannerDiscount.vue'
 import MainMenuCategories from '../sections/MainMenuCategories.vue'
+import MainBannerDownload from '../sections/MainBannerDownload.vue'
+import MainLatestNews from '../sections/MainLatestNews.vue'
 
 export default {
     name: 'Main',
     components: {
         MainDishes,
-        MainBanner,
-        MainMenuCategories
+        MainBannerDiscount,
+        MainMenuCategories,
+        MainBannerDownload,
+        MainLatestNews
     },
-    data() {
-      return{
-        dishes: [
-            {
-                image: require ("../../assets/images/skin-on-fries-200x286.jpg"),
-                type: "Skin On Fries",
-                price: "$ 3.00-$ 6.00",
-            },
-            {
-                image: require ("../../assets/images/choco-cookie-frappe-200x286.jpg"),
-                type: "Choco Cookie Frappe",
-                price: "$ 4.99",
-            },
-            {
-                image: require ("../../assets/images/donut-burger-200x286.jpg"),
-                type: "The Donut Burger",
-                price: "$ 6.99",
-            }
-        ]
-      }
-  }
 }
+
 </script>
 
 <style lang="scss" scoped>
 
-.dishes{
-    display: flex;
-    justify-content: center;
-}
 
 
 </style>

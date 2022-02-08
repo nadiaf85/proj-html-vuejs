@@ -12,13 +12,30 @@
                 </ul>
             </nav>
         </div>
+        <div class="container_info">
+          <div class="text_left">
+              <p>Hungry?</p>
+              <p>Great Food</p>
+              <p>Delivered</p>
+              <button type="button">View our menu <i class="fas fa-arrow-circle-right"></i></button>
+              <!-- <span>Delivered</span> -->
+        </div>
+      </div>
+
+        <!-- <Delivery/> -->
+
     </header>
 </template>
 
 <script>
+// import Delivery from '../commons/Delivery.vue';
+// import '../../assets/style/vars.scss';
 
 export default {
     name: 'Header',
+    components:{
+      // Delivery
+    },
     data() {
       return{
         info: [
@@ -48,7 +65,7 @@ export default {
                 current: false,
             },
             {
-                text: "Collectibles",
+                text: "carrello",
                 url: "#",
                 current: false,
             }
@@ -70,7 +87,7 @@ header{
 
 .container{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
   .logo{
@@ -86,6 +103,7 @@ nav{
     list-style-type: none;
     display: flex;
     justify-content: center;
+    text-transform: uppercase;
     }
 
     li a{
@@ -97,6 +115,26 @@ nav{
       font-weight: 600;
     }
   }
+
+.container_info{
+    width: 80%;
+    margin: auto;
+}
+
+.text_left{
+    color: white;
+    width: 25%;
+    padding: 8px;
+    line-height: 10px;
+    font-size: 40px;
+
+    button{
+      border-radius: 9px;
+      padding: 8px;
+      width: 55%;
+    }
+}
+
 //   .active{
 //         border-bottom:4px solid red;
 //         color: $first_color;

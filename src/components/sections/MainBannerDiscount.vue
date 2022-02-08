@@ -1,16 +1,16 @@
 <template>
-    <div class="banner"></div>
+    <div class="banner_discount"></div>
 </template>
 
 <script>
 export default {
-    name: 'MainBanner',
+    name: 'MainBannerDiscount',
     
 }
 </script>
 
 <style lang="scss" scoped>
-.banner{
+.banner_discount{
     background-image: url('../../assets/images/first-order-background-scaled.jpg') ;
     background-position: top;
     background-repeat: no-repeat;

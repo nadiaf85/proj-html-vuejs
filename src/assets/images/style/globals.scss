@@ -1,5 +1,5 @@
-
 @import './vars.scss';
+
 
 *{
     box-sizing: border-box;
@@ -8,8 +8,7 @@
 }
 
 .container{
-    width: 1100px;
-    margin: 0 auto;
+    width: 80%;
+    margin: auto;
     display: flex;
-    
 }

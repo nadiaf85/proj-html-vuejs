@@ -60,11 +60,13 @@ export default {
 }
 
 .categories{
-    display: flex;
-    justify-content: center;
+    width: calc(20% - 4px);
+    margin: 2px;
+    padding: 20px 13px;
+    
 
     img{
-        width: 40%;
+        width: 100%;
     }
 }
 

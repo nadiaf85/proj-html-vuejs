@@ -4,7 +4,7 @@
     <h1>Our Most Popular Dishes</h1>
     <div class="container">
         <div class="dishes">
-            <div v-for="(element,index) in dishes" :key="index">
+            <div v-for="(element,index) in dishesType" :key="index">
                 <img :src="element.image" alt="">
                 <p>{{element.type}}</p>
                 <p>{{element.price}}</p>
@@ -13,7 +13,7 @@
     </div>
     
     <div class="button">
-        <button type="button">Start your order</button>
+        <button type="button">Start your order <i class="fas fa-arrow-circle-right"></i></button>
     </div>
     
 </section>
@@ -26,7 +26,7 @@ export default {
     name: 'Main',
     data() {
       return{
-        dishes: [
+        dishesType: [
             {
                 image: require ("../../assets/images/skin-on-fries-200x286.jpg"),
                 type: "Skin On Fries",
@@ -51,13 +51,18 @@ export default {
 <style lang="scss" scoped>
 // @import '../../assets/style/variables.scss';
 
+.popular_dishes{
+    h1{
+        text-align: center;
+        font-size: 30px;
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+}
+
 .dishes{
     display: flex;
     justify-content: center;
-
-    h1{
-        text-align: center;
-    }
 
     img{
         padding: 10px;
@@ -73,6 +78,7 @@ export default {
     text-align: center;
     margin-bottom: 20px;
     margin-top: 10px;
+    
     // background-color: $buttonColor;
 }
 
