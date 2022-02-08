@@ -1,10 +1,20 @@
 <template>
 
 <section class="popular_dishes">
+    <h1>Our Most Popular Dishes</h1>
+    <div class="container">
+        <div class="dishes">
+            <div v-for="(element,index) in dishes" :key="index">
+                <img :src="element.image" alt="">
+                <p>{{element.type}}</p>
+                <p>{{element.price}}</p>
+            </div>
+        </div>
+    </div>
     
-    <MainDishes/>
-    <MainBanner/>
-    <MainMenuCategories/>
+    <div class="button">
+        <button type="button">Start your order</button>
+    </div>
     
 </section>
 
@@ -12,17 +22,8 @@
 </template>
 
 <script>
-import MainDishes from '../sections/MainDishes.vue'
-import MainBanner from '../sections/MainBanner.vue'
-import MainMenuCategories from '../sections/MainMenuCategories.vue'
-
 export default {
     name: 'Main',
-    components: {
-        MainDishes,
-        MainBanner,
-        MainMenuCategories
-    },
     data() {
       return{
         dishes: [
@@ -48,10 +49,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// @import '../../assets/style/variables.scss';
 
 .dishes{
     display: flex;
     justify-content: center;
+
+    h1{
+        text-align: center;
+    }
+
+    img{
+        padding: 10px;
+    }
+
+    p{
+        text-align: center;
+        line-height: 10px;
+    }
+}
+
+.button{
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    // background-color: $buttonColor;
 }
 
 
