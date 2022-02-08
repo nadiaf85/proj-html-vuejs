@@ -14,10 +14,10 @@
         </div>
         <div class="container_info">
           <div class="text_left">
-              <p>Hungry?</p>
-              <p>Great Food</p>
+              <h5>Hungry?</h5>
+              <h3>Great Food</h3>
               <p>Delivered</p>
-              <button type="button">View our menu <i class="fas fa-arrow-circle-right"></i></button>
+              <button type="button" class="button">View our menu <i class="fas fa-arrow-circle-right"></i></button>
               <!-- <span>Delivered</span> -->
         </div>
       </div>
@@ -29,7 +29,6 @@
 
 <script>
 // import Delivery from '../commons/Delivery.vue';
-// import '../../assets/style/vars.scss';
 
 export default {
     name: 'Header',
@@ -76,6 +75,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/style/vars.scss';
 
 header{
     height: 830px;
@@ -128,11 +128,18 @@ nav{
     line-height: 10px;
     font-size: 40px;
 
-    button{
-      border-radius: 9px;
-      padding: 8px;
-      width: 55%;
+    h3{
+      color: $textBigColor;
     }
+
+.button{
+    border-radius: 9px;
+    padding: 8px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    background-color: $buttonColor;
+    color: $textColor;
+  }
 }
 
 //   .active{

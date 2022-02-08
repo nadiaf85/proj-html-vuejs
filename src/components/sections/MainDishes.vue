@@ -49,7 +49,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// @import '../../assets/style/variables.scss';
+@import '../../assets/style/vars.scss';
 
 .popular_dishes{
     h1{
@@ -74,12 +74,14 @@ export default {
     }
 }
 
-.button{
+button{
     text-align: center;
+    border-radius: 9px;
+    padding: 8px;
     margin-bottom: 20px;
     margin-top: 10px;
-    
-    // background-color: $buttonColor;
+    background-color: $buttonColor;
+    color: $textColor;
 }
 
 

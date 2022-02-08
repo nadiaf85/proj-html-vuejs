@@ -60,13 +60,15 @@ export default {
 }
 
 .categories{
-    width: calc(20% - 4px);
+    // width: calc(20% - 4px);
     margin: 2px;
     padding: 20px 13px;
+    display: flex;
     
 
     img{
-        width: 100%;
+        height: 180px;
+        padding: 10px;
     }
 }
 

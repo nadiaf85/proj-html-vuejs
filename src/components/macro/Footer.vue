@@ -11,6 +11,19 @@
       <div class="information">
         <h1>Stay In The Loop</h1>
         <h5>Sign up to receive up to date news and offer directly in your inbox:</h5>
+        <input type="text" placeholder="you@email.com">
+      </div>
+
+      <button>Subscribe</button>
+
+      <div class="social">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-linkedin"></i>
+        <i class="fas fa-rss"></i>
+        <i class="fab fa-youtube"></i>
+        <i class="far fa-envelope"></i>
       </div>
     </div>
   </footer>
@@ -184,7 +197,12 @@ footer{
 }
 
 .information{
-  
+  width: 80%;
+  color: white;
+}
+
+.social{
+  color: white;
 }
 
 </style>
