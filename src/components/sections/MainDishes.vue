@@ -6,8 +6,8 @@
         <div class="dishes">
             <div v-for="(element,index) in dishesType" :key="index">
                 <img :src="element.image" alt="">
-                <p>{{element.type}}</p>
-                <p>{{element.price}}</p>
+                <p class="type"><strong>{{element.type}}</strong></p>
+                <p class="price">{{element.price}}</p>
             </div>
         </div>
     </div>
@@ -28,17 +28,17 @@ export default {
       return{
         dishesType: [
             {
-                image: require ("../../assets/images/skin-on-fries-200x286.jpg"),
+                image: require ("../../assets/images/skin-on-fries-400x571.jpg"),
                 type: "Skin On Fries",
                 price: "$ 3.00-$ 6.00",
             },
             {
-                image: require ("../../assets/images/choco-cookie-frappe-200x286.jpg"),
+                image: require ("../../assets/images/choco-cookie-frappe-400x571.jpg"),
                 type: "Choco Cookie Frappe",
                 price: "$ 4.99",
             },
             {
-                image: require ("../../assets/images/donut-burger-200x286.jpg"),
+                image: require ("../../assets/images/donut-burger-400x571.jpg"),
                 type: "The Donut Burger",
                 price: "$ 6.99",
             }
@@ -70,18 +70,33 @@ export default {
 
     p{
         text-align: center;
-        line-height: 10px;
+        line-height: 30px;
     }
 }
 
-button{
-    text-align: center;
-    border-radius: 9px;
-    padding: 8px;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    background-color: $buttonColor;
-    color: $textColor;
+.type{
+    font-size: 25px;
+}
+
+.price{
+    color: $buttonColor;
+    font-weight: 200;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+
+    button{
+        border-radius: 20px;
+        padding: 8px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        background-color: $buttonColor;
+        color: $textColor;
+    }
+    
 }
 
 

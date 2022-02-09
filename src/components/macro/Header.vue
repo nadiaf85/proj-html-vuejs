@@ -103,7 +103,6 @@ nav{
     list-style-type: none;
     display: flex;
     justify-content: center;
-    text-transform: uppercase;
     }
 
     li a{
@@ -123,17 +122,18 @@ nav{
 
 .text_left{
     color: white;
-    width: 25%;
+    width: 45%;
     padding: 8px;
-    line-height: 10px;
-    font-size: 40px;
+    line-height: 76px;
+    font-size: 76px;
+    margin-top: 120px;
 
     h3{
       color: $textBigColor;
     }
 
-.button{
-    border-radius: 9px;
+button{
+    border-radius: 20px;
     padding: 8px;
     margin-bottom: 20px;
     margin-top: 10px;

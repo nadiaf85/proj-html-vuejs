@@ -2,6 +2,7 @@
 
 <section class="menu">
     <h1>Menu Categories</h1>
+    <button>View the full menu</button>
     <div class="container">
         <div class="categories">
             <div v-for="(element,index) in categoriesInfo" :key="index">
@@ -54,8 +55,10 @@ export default {
 <style lang="scss" scoped>
 
 .menu{
+    margin-top: 90px;
+
     h1{
-        text-align: center;
+        text-align: left;
     }
 }
 

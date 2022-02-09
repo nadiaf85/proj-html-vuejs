@@ -14,7 +14,9 @@
         <input type="text" placeholder="you@email.com">
       </div>
 
-      <button>Subscribe</button>
+      <div class="sub">
+        <button>Subscribe</button>
+      </div>
 
       <div class="social">
         <i class="fab fa-facebook"></i>
@@ -24,6 +26,10 @@
         <i class="fas fa-rss"></i>
         <i class="fab fa-youtube"></i>
         <i class="far fa-envelope"></i>
+      </div>
+
+      <div class="copyright">
+        <p>© Copyright 2012-2020|Avada Theme by Theme Fusion|All Right Reserved|Powered by WordPress</p>
       </div>
     </div>
   </footer>
@@ -152,6 +158,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/style/vars.scss';
 
 footer{
   height: 1000px;
@@ -163,7 +170,7 @@ footer{
 
 .info_footer{
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-evenly;
   width: 100%;
   height: 100%;
   margin-top: 60px;
@@ -172,7 +179,7 @@ footer{
     width: 80%;
   }
   ul{
-    width: 100px;
+    width: 8%;
     color: white;
     list-style: none;
     text-transform: uppercase;
@@ -197,12 +204,47 @@ footer{
 }
 
 .information{
-  width: 80%;
+  width: 100%;
   color: white;
+  text-align: center;
+  line-height: 35px;
+  margin-top: 30px;
+
+  input{
+    width: 32%;
+    border-radius: 20px;
+    padding: 10px;
+  }
+}
+
+.sub{
+  text-align: center;
+
+  button{
+    width: 32%;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: $buttonColor;
+    color: $textColor;
+  }
 }
 
 .social{
-  color: white;
+  color: $textColor;
+  text-align: center;
+  margin-top: 30px;
+
+  i{
+    padding: 20px;
+  }
+}
+
+.copyright{
+  color: $textColor;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 12px
 }
 
 </style>

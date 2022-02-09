@@ -2,8 +2,8 @@
     <section class="banner_download">
         <div class="container_info">
             <div class="text_left">
-                <p>Download Our</p>
-                <p>Ordering App</p>
+                <p class="down">Download Our</p>
+                <p class="app"><strong>Ordering App</strong></p>
             </div>
         </div>
 </section>
@@ -17,6 +17,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/style/vars.scss';
 
 .banner_download{
     background-image: url('../../assets/images/app-ordering-scaled.jpg') ;
@@ -34,7 +35,18 @@ export default {
 
 .text_left{
     color: white;
-    width: 25%;
+    width: 45%;
     padding: 8px;
+    line-height: 50px;
+    font-size: 76px;
+}
+
+.down{
+    margin-top: 30px;
+    font-size: 30px;
+}
+
+.app{
+    color: $textBigColor;
 }
 </style>
