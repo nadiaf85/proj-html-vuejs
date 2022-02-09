@@ -4,6 +4,7 @@
       <div class="info_footer">
         <ul v-for="(element, index) in categories" :key="index">{{element.text}}
           <li v-for="(element, index) in categories[index].content" :key="index">{{element.text}}</li>
+          <li :class=(element.image)></li>
         </ul>
       </div>
       <Logo/>
@@ -112,6 +113,12 @@ export default {
             },
             {
               text: "Privacy Policy"
+            },
+            {
+              image: require ("../../assets/images/app-store-badge.png"),
+            },
+            {
+              image: require ("../../assets/images/play-store-badge.png"),
             },
           ]
           },

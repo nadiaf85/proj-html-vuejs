@@ -45,7 +45,7 @@ export default {
             },
             {
                 image: require ("../../assets/images/specials-menu-background.jpg"),
-            }
+            },
         ]
       }
   }
@@ -63,14 +63,16 @@ export default {
 }
 
 .categories{
-    // width: calc(20% - 4px);
     margin: 2px;
     padding: 20px 13px;
     display: flex;
+    flex-wrap: wrap;
+    // width: 100%;
+    justify-content: center;
     
 
     img{
-        height: 180px;
+        height: 241px;
         padding: 10px;
     }
 }

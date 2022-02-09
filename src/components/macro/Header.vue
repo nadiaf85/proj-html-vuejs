@@ -5,10 +5,11 @@
                 <img src="../../assets/images/takeout-logo.png" alt="">
             </div>
             <nav>
-                <ul>
-                    <li v-for="(element, index) in info" :key="index">
+                <ul v-for="(element, index) in info" :key="index">
+                    <li>
                     <a href="#" :class="{'active': element.current==true}">{{element.text}}</a>
                     </li>
+                    <li :class=(element.icon)></li>
                 </ul>
             </nav>
         </div>
@@ -18,23 +19,14 @@
               <h3>Great Food</h3>
               <p>Delivered</p>
               <button type="button" class="button">View our menu <i class="fas fa-arrow-circle-right"></i></button>
-              <!-- <span>Delivered</span> -->
         </div>
       </div>
-
-        <!-- <Delivery/> -->
-
     </header>
 </template>
 
 <script>
-// import Delivery from '../commons/Delivery.vue';
-
 export default {
     name: 'Header',
-    components:{
-      // Delivery
-    },
     data() {
       return{
         info: [
@@ -64,7 +56,7 @@ export default {
                 current: false,
             },
             {
-                text: "carrello",
+                icon: "fa-solid fa-cart-shopping",
                 url: "#",
                 current: false,
             }
@@ -98,21 +90,27 @@ header{
 
 nav{
      line-height: 80px;
+     display: flex;
 
     ul{
     list-style-type: none;
     display: flex;
     justify-content: center;
+    color: $textColor;
     }
 
     li a{
       display: inline-block;
-      color: white;
+      color: $textColor;
       padding: 15px 10px;
       text-decoration: none;
       font-size: 12px;
       font-weight: 600;
     }
+  }
+
+  .icon_cart{
+    color: $textColor;
   }
 
 .container_info{

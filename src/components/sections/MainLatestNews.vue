@@ -1,16 +1,19 @@
 <template>
 
-<section class="news">
-    <h1>Latest News</h1>
-    <div class="container">
-        <div class="new_type">
-            <div v-for="(element,index) in newType" :key="index">
-                <img :src="element.image" alt="">
-                <p>{{element.title}}</p>
-                <p>{{element.description}}</p>
+<section class="container">
+    <div class="news">
+        <h1>Latest News</h1>
+        <button type="button">Start your order</button>
+            <div class="new_type">
+                <div v-for="(element,index) in newType" :key="index">
+                    <img :src="element.image" alt="">
+                    <div class="text_news">
+                        <p class="type"><strong>{{element.title}}</strong></p>
+                        <p class="information_type">{{element.description}}</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
     
     <!-- <div class="button">
         <button type="button">Start your order</button>
@@ -44,7 +47,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// @import '../../assets/style/variables.scss';
+@import '../../assets/style/vars.scss';
 
 .container{
     display: flex;
@@ -52,8 +55,15 @@ export default {
 }
 
 .news{
+    width: 60%;
+    margin-top: 80px;
+    margin-bottom: 80px;
+
     h1{
-        text-align: center;
+        text-align: left;
+        font-size: 30px;
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
 }
 
@@ -63,7 +73,7 @@ export default {
     justify-content: center;
 
     img{
-        padding: 10px;
+        padding: 2px;
     }
 
     p{
@@ -72,11 +82,30 @@ export default {
     }
 }
 
+.text_news{
+    width: 100%;
+
+    p{
+        line-height: 20px;
+    }
+
+    .type{
+        font-size: 25px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .information_type{
+        font-size: 12px;
+        width: 94%;
+    }
+}
+
 .button{
     text-align: center;
     margin-bottom: 20px;
     margin-top: 10px;
-    // background-color: $buttonColor;
+    background-color: $buttonColor;
 }
 
 

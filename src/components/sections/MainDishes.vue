@@ -1,6 +1,12 @@
 <template>
 
 <section class="popular_dishes">
+    <div class="delivery">
+        <span><i class="far fa-clock"></i>24/7 Delivery</span>
+        <span><i class="fas fa-hamburger"></i>Over 100 Dishes</span>
+        <span><i class="fas fa-mobile-alt"></i>In App Ordering</span>
+        <span><i class="fas fa-car"></i>Fast Delivery</span>
+    </div>
     <h1>Our Most Popular Dishes</h1>
     <div class="container">
         <div class="dishes">
@@ -96,8 +102,16 @@ export default {
         background-color: $buttonColor;
         color: $textColor;
     }
-    
 }
 
+.delivery{
+    text-align: center;
+    height: 50px;
+
+    span{
+        padding: 20px;
+        text-transform: uppercase;
+    }
+}
 
 </style>
