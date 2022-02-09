@@ -2,8 +2,10 @@
 
 <section class="container">
     <div class="news">
-        <h1>Latest News</h1>
-        <button type="button">Start your order</button>
+        <div class="title_button">
+            <h1>Latest News</h1>
+            <button type="button" class="button">Read more news <i class="fas fa-arrow-circle-right"></i></button>
+        </div>
             <div class="new_type">
                 <div v-for="(element,index) in newType" :key="index">
                     <img :src="element.image" alt="">
@@ -14,11 +16,6 @@
                 </div>
             </div>
         </div>
-    
-    <!-- <div class="button">
-        <button type="button">Start your order</button>
-    </div> -->
-    
 </section>
 
   
@@ -31,12 +28,12 @@ export default {
       return{
         newType: [
             {
-                image: require ("../../assets/images/pancake-burger-400x300.jpg"),
+                image: require ("../../assets/images/pancake-burger.jpg"),
                 title: "NEW: The Pancake Burger",
                 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sodales ipsum vel elementum vehicula. Suspendisse sit amet aliquet ex.Pellentesque commodo tortor vel mi",
             },
             {
-                image: require ("../../assets/images/new-milkshake-menu-400x300.jpg"),
+                image: require ("../../assets/images/new-milkshake-menu.jpg"),
                 title: "New Milkshake Menu",
                 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sodales ipsum vel elementum vehicula. Suspendisse sit amet aliquet ex.Pellentesque commodo tortor vel mi",
             },
@@ -55,7 +52,6 @@ export default {
 }
 
 .news{
-    width: 60%;
     margin-top: 80px;
     margin-bottom: 80px;
 
@@ -67,6 +63,12 @@ export default {
     }
 }
 
+.title_button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+}
 
 .new_type{
     display: flex;
@@ -74,6 +76,7 @@ export default {
 
     img{
         padding: 2px;
+        width: 90%;
     }
 
     p{
@@ -83,7 +86,7 @@ export default {
 }
 
 .text_news{
-    width: 100%;
+    width: 94%;
 
     p{
         line-height: 20px;
@@ -101,11 +104,15 @@ export default {
     }
 }
 
-.button{
-    text-align: center;
+button{
+    border: 1px solid $buttonColor;
+    border-radius: 20px;
+    padding: 8px;
     margin-bottom: 20px;
     margin-top: 10px;
     background-color: $buttonColor;
+    color: $textColor;
+    text-transform: uppercase;
 }
 
 

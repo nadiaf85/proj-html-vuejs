@@ -33,12 +33,12 @@ export default {
             {
                 text: "Home",
                 url: "#",
-                current: false,
+                current: true,
             },
             {
                 text: "Order online",
                 url: "#",
-                current: true,
+                current: false,
             },
             {
                 text: "About",
@@ -78,6 +78,7 @@ header{
 }
 
 .container{
+  width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -96,7 +97,9 @@ nav{
     list-style-type: none;
     display: flex;
     justify-content: center;
+    align-items: center;
     color: $textColor;
+    padding: 8px;
     }
 
     li a{
@@ -107,6 +110,11 @@ nav{
       font-size: 12px;
       font-weight: 600;
     }
+  }
+
+  .active{
+      color: $textBigColor;
+      padding-bottom: 20px;
   }
 
   .icon_cart{
@@ -131,19 +139,15 @@ nav{
     }
 
 button{
+    border: 1px solid $buttonColor;
     border-radius: 20px;
     padding: 8px;
     margin-bottom: 20px;
     margin-top: 10px;
     background-color: $buttonColor;
     color: $textColor;
+    text-transform: uppercase;
   }
 }
-
-//   .active{
-//         border-bottom:4px solid red;
-//         color: $first_color;
-//         padding-bottom: 20px;
-//   }
 
 </style>

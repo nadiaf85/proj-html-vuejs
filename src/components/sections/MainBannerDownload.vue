@@ -4,6 +4,8 @@
             <div class="text_left">
                 <p class="down">Download Our</p>
                 <p class="app"><strong>Ordering App</strong></p>
+                <span><img src="../../assets/images/app-store-badge-200x67.png" alt=""></span>
+                <span><img src="../../assets/images/play-store-badge-200x67.png" alt=""></span>
             </div>
         </div>
 </section>
@@ -36,9 +38,17 @@ export default {
 .text_left{
     color: white;
     width: 45%;
-    padding: 8px;
+    padding: 10px;
     line-height: 50px;
-    font-size: 76px;
+    font-size: 64px;
+
+    span{
+        margin-right: 10px;
+
+        img{
+            width: 42%;
+        }
+    }
 }
 
 .down{
@@ -48,5 +58,6 @@ export default {
 
 .app{
     color: $textBigColor;
+    margin-bottom: 50px;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div class="container">
+    <div class="container_footer">
       <div class="info_footer">
         <ul v-for="(element, index) in categories" :key="index">{{element.text}}
           <li v-for="(element, index) in categories[index].content" :key="index">{{element.text}}</li>
@@ -80,7 +80,8 @@ export default {
           text: "Navigate",
           content:[
             {
-              text: "Home"
+              text: "Home",
+              current: true,
             },
             {
               text: "Alternate Home"
@@ -152,7 +153,7 @@ export default {
             text: "Voucher",
             content: [
               {
-                // image: require ("../../assets/images/footer-coupon-200x200.jpg"),
+                image: require ("../../assets/images/footer-coupon-200x200.png"),
                 text: "Just Use The Code FIRSTORDER At Checkout"
               }
             ]
@@ -173,6 +174,11 @@ footer{
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.container_footer{
+  width: 100%;
+  padding: 20px;
 }
 
 .info_footer{
@@ -217,6 +223,10 @@ footer{
   line-height: 35px;
   margin-top: 30px;
 
+    h1{
+      color: $textBigColor;
+    }
+
   input{
     width: 32%;
     border-radius: 20px;
@@ -230,10 +240,12 @@ footer{
   button{
     width: 32%;
     border-radius: 20px;
-    padding: 10px;
+    padding: 8px;
     margin-top: 20px;
     background-color: $buttonColor;
     color: $textColor;
+    border: 1px solid $buttonColor;
+    text-transform: uppercase;
   }
 }
 

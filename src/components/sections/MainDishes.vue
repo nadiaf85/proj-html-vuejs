@@ -2,10 +2,10 @@
 
 <section class="popular_dishes">
     <div class="delivery">
-        <span><i class="far fa-clock"></i>24/7 Delivery</span>
-        <span><i class="fas fa-hamburger"></i>Over 100 Dishes</span>
-        <span><i class="fas fa-mobile-alt"></i>In App Ordering</span>
-        <span><i class="fas fa-car"></i>Fast Delivery</span>
+        <span><i class="far fa-clock"></i> 24/7 Delivery</span>
+        <span><i class="fas fa-hamburger"></i> Over 100 Dishes</span>
+        <span><i class="fas fa-mobile-alt"></i> In App Ordering</span>
+        <span><i class="fas fa-car"></i> Fast Delivery</span>
     </div>
     <h1>Our Most Popular Dishes</h1>
     <div class="container">
@@ -87,6 +87,7 @@ export default {
 .price{
     color: $buttonColor;
     font-weight: 200;
+    font-size: 14px;
 }
 
 .button{
@@ -95,22 +96,26 @@ export default {
     margin-top: 30px;
 
     button{
+        border: 1px solid $buttonColor;
         border-radius: 20px;
         padding: 8px;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         margin-top: 10px;
         background-color: $buttonColor;
         color: $textColor;
+        text-transform: uppercase;
     }
 }
 
 .delivery{
     text-align: center;
     height: 50px;
+    font-size: 13px;
 
     span{
-        padding: 20px;
+        padding: 35px;
         text-transform: uppercase;
+        background-color: $textColor;
     }
 }
 
