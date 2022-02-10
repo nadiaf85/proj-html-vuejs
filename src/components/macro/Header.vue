@@ -92,6 +92,7 @@ header{
 nav{
      line-height: 80px;
      display: flex;
+     align-items: baseline;
 
     ul{
     list-style-type: none;

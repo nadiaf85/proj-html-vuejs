@@ -8,7 +8,25 @@
             <div class="categories">
                 <div v-for="(element,index) in categoriesInfo" :key="index">
                     <img :src="element.image" alt="">
+                </div>
+            </div>
 
+            <div class="type_categories">
+                <div class="leaf">
+                    <i class="fas fa-leaf" style="color:#228B22"></i>
+                    <p>Vegetarian</p>
+                </div>
+                <div class="gluten">
+                    <i class="fab fa-pagelines" style="color:#FFD700"></i> 
+                    <p>Gluten Free</p>
+                </div>
+                <div class="bottle">
+                    <i class="fas fa-wine-bottle" style="color:#6495ED"></i>
+                    <p>Dairy Free</p>
+                </div>
+                <div class="steak">
+                    <i class="fas fa-drumstick-bite" style="color:#A52A2A"></i>
+                    <p>Keto Friendly</p>
                 </div>
             </div>
 </section>
@@ -53,18 +71,6 @@ export default {
                 image: require ("../../assets/images/specials-menu-background.jpg"),
                 text: "Specials"
             },
-            {
-                icon: "fa-solid fa-leafy-green",
-            },
-            {
-                icon: "fa-solid fa-wheat-awn",
-            },
-            {
-                icon: "fa-solid fa-wine-bottle",
-            },
-            {
-                icon: "fa-solid fa-steak",
-            }
         ]
       }
   }
@@ -74,20 +80,17 @@ export default {
 <style lang="scss" scoped>
 @import '../../assets/style/vars.scss';
 
-.menu{
-    margin-top: 90px;
-
-    h1{
-        text-align: left;
-    }
-}
-
 .title_button{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 95%;
-    margin-top: 40px;
+    margin-top: 60px;
+    margin-left: 23px;
+
+    h1{
+        font-size: 30px;
+    }
 }
 
 .categories{
@@ -102,13 +105,9 @@ export default {
     img{
         height: 241px;
         padding: 10px;
+        filter: brightness(80%);
     }
 }
-
-// .icon_type{
-//     display: flex;
-//     justify-content: center;
-// }
 
 button{
     border: 1px solid $buttonColor;
@@ -121,4 +120,19 @@ button{
     text-transform: uppercase;
   }
 
+.type_categories{
+    width: 100%;
+    font-size: 40px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    text-align: center;
+
+    p{
+        font-size: 13px;
+        margin-top: 5px;
+        font-weight: bold;
+    }
+}
 </style>

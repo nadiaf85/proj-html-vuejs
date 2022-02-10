@@ -210,6 +210,11 @@ footer{
     }
   }
 
+// .active{
+//       color: $textBigColor;
+//       padding-bottom: 20px;
+//   }
+
 .logo{
     display: flex;
     justify-content: center;

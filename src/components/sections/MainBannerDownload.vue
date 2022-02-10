@@ -26,7 +26,7 @@ export default {
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 392px;
+    height: 425px;
     width: 100%;
 }
 
@@ -46,14 +46,15 @@ export default {
         margin-right: 10px;
 
         img{
-            width: 42%;
+            width: 35%;
         }
     }
 }
 
 .down{
-    margin-top: 30px;
+    margin-top: 80px;
     font-size: 30px;
+    line-height: 34px;
 }
 
 .app{
