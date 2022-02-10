@@ -8,8 +8,8 @@
                 <ul v-for="(element, index) in info" :key="index">
                     <li>
                     <a href="#" :class="{'active': element.current==true}">{{element.text}}</a>
+                    <div class="arrow" :class="{'active': element.current==true}"><span :class=(element.icon) ></span></div>
                     </li>
-                    <li :class=(element.icon)></li>
                 </ul>
             </nav>
         </div>
@@ -32,6 +32,7 @@ export default {
         info: [
             {
                 text: "Home",
+                icon: "fas fa-angle-down",
                 url: "#",
                 current: true,
             },
@@ -104,7 +105,7 @@ nav{
     }
 
     li a{
-      display: inline-block;
+      display: flex;
       color: $textColor;
       padding: 15px 10px;
       text-decoration: none;
@@ -113,9 +114,19 @@ nav{
     }
   }
 
+  li{
+    display: flex;
+  }
+
+  .arrow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .active{
       color: $textBigColor;
-      padding-bottom: 20px;
+      padding: 4px;
   }
 
   .icon_cart{
@@ -135,8 +146,16 @@ nav{
     font-size: 76px;
     margin-top: 120px;
 
+    h5{
+      font-size: 40px;
+    }
+
     h3{
       color: $textBigColor;
+    }
+
+    p{
+      font-weight: bold;
     }
 
 button{
@@ -148,6 +167,12 @@ button{
     background-color: $buttonColor;
     color: $textColor;
     text-transform: uppercase;
+    width: 37%;
+    font-weight: bold;
+
+    &:hover{
+      background-color: #bf1e23;
+    }
   }
 }
 

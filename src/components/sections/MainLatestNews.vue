@@ -77,6 +77,10 @@ export default {
     img{
         padding: 2px;
         width: 90%;
+
+        &:hover {
+            filter: brightness(75%);
+        }
     }
 
     p{
@@ -99,7 +103,7 @@ export default {
     }
 
     .information_type{
-        font-size: 12px;
+        font-size: 15px;
         width: 94%;
     }
 }
@@ -113,6 +117,8 @@ button{
     background-color: $buttonColor;
     color: $textColor;
     text-transform: uppercase;
+    width: 19%;
+    font-weight: bold;
 }
 
 

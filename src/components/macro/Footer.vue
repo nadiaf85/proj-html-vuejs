@@ -3,8 +3,8 @@
     <div class="container_footer">
       <div class="info_footer">
         <ul v-for="(element, index) in categories" :key="index">{{element.text}}
-          <li v-for="(element, index) in categories[index].content" :key="index">{{element.text}}</li>
-          <li :class=(element.image)></li>
+          <li v-for="(element, index) in categories[index].content" :key="index">{{element.text}}{{element.day}}{{element.time}}</li>
+          <!-- <li img :src="require ('../../assets/images/'+element.image+'.png')"></li> -->
         </ul>
       </div>
       <Logo/>
@@ -20,13 +20,13 @@
       </div>
 
       <div class="social">
-        <i class="fab fa-facebook"></i>
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-linkedin"></i>
-        <i class="fas fa-rss"></i>
-        <i class="fab fa-youtube"></i>
-        <i class="far fa-envelope"></i>
+        <span><i class="fab fa-facebook"></i></span>
+        <span><i class="fab fa-twitter"></i></span>
+        <span><i class="fab fa-instagram"></i></span>
+        <span><i class="fab fa-linkedin"></i></span>
+        <span><i class="fas fa-rss"></i></span>
+        <span><i class="fab fa-youtube"></i></span>
+        <span><i class="far fa-envelope"></i></span>
       </div>
 
       <div class="copyright">
@@ -116,10 +116,10 @@ export default {
               text: "Privacy Policy"
             },
             {
-              image: require ("../../assets/images/app-store-badge.png"),
+              image: "app-store-badge",
             },
             {
-              image: require ("../../assets/images/play-store-badge.png"),
+              image: "play-store-badge",
             },
           ]
           },
@@ -127,25 +127,32 @@ export default {
           text: "Opening Hours",
           content:[
             {
-              text: "Mon - 10AM to 11PM"
+              day: "Mon - ",
+              time: "10AM to 11PM"
             },
             {
-              text: "Tue - 10AM to 11PM"
+              day: "Tue - ",
+              time: "10AM to 11PM"
             },
             {
-              text: "Wed - 10AM to 11PM"
+              day: "Wed - ",
+              time: "10AM to 11PM"
             },
             {
-              text: "Thur - 10AM to 11PM"
+              day: "Thur - ",
+              time: "10AM to 11PM"
             },
             {
-              text: "Fri - 10AM to 11PM"
+              day: "Fri - ",
+              time: "10AM to 11PM"
             },
             {
-              text: "Sat - 10AM to 11PM"
+              day: "Sat - ",
+              time: "10AM to 11PM"
             },
             {
-              text: "Sun - 10AM to 11PM"
+              day: "Sun - ",
+              time: "10AM to 11PM"
             },
           ]
           },
@@ -153,7 +160,7 @@ export default {
             text: "Voucher",
             content: [
               {
-                image: require ("../../assets/images/footer-coupon-200x200.png"),
+                image: "footer-coupon-200x200",
                 text: "Just Use The Code FIRSTORDER At Checkout"
               }
             ]
@@ -187,10 +194,15 @@ footer{
   width: 100%;
   height: 100%;
   margin-top: 60px;
+
+  .time{
+    color: $textBigColor;
+  }
   
   img{
     width: 80%;
   }
+
   ul{
     width: 8%;
     color: white;
@@ -199,6 +211,7 @@ footer{
     font-weight: bold;
     font-size: 13px;
     margin-bottom: 15px;
+    line-height: 25px;
 
     li{
       color: lightgray;
@@ -206,9 +219,11 @@ footer{
       font-size: 11px;
       margin: 4px 0;
       font-weight: 200;
+      font-weight: bold;
       }
     }
   }
+
 
 // .active{
 //       color: $textBigColor;
@@ -232,6 +247,10 @@ footer{
       color: $textBigColor;
     }
 
+    h5{
+      font-weight: 200;
+    }
+
   input{
     width: 32%;
     border-radius: 20px;
@@ -251,6 +270,7 @@ footer{
     color: $textColor;
     border: 1px solid $buttonColor;
     text-transform: uppercase;
+    font-weight: bold;
   }
 }
 
@@ -259,8 +279,8 @@ footer{
   text-align: center;
   margin-top: 30px;
 
-  i{
-    padding: 20px;
+  span{
+    padding: 5px;
   }
 }
 
@@ -268,7 +288,12 @@ footer{
   color: $textColor;
   text-align: center;
   margin-top: 30px;
-  font-size: 12px
+  font-size: 12px;
+
+  p{
+    color: $textBigColor;
+    font-weight: bold;
+  }
 }
 
 </style>

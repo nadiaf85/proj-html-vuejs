@@ -12,6 +12,10 @@
         <div class="dishes">
             <div v-for="(element,index) in dishesType" :key="index">
                 <img :src="element.image" alt="">
+                <div class="view_cart">
+                    <p class="check"><i class="far fa-check-square"></i></p>
+                    <p class="view">View cart</p>
+                </div>
                 <p class="type"><strong>{{element.type}}</strong></p>
                 <p class="price">{{element.price}}</p>
             </div>
@@ -69,14 +73,52 @@ export default {
 .dishes{
     display: flex;
     justify-content: center;
+    position: relative;
+
+    &:hover .view_cart{
+        display: block;
+    }
+
+    .check{
+        font-size: 30px;
+        border: 3px solid black;
+        padding: 10px;
+        border-radius: 40px;
+        background-color: black;
+        color: $textColor;
+        height: 57px;
+        transform: translate(174px, -326px);
+        width: 72%;
+    }
+
+    .view{
+        font-size: 13px;
+        color: $textColor;
+        transform: translate(164px, -326px);
+        text-transform: uppercase;
+        font-weight: bold;
+    }
 
     img{
         padding: 10px;
+
+        &:hover {
+            filter: brightness(75%);
+        }
     }
 
     p{
         text-align: center;
         line-height: 30px;
+    }
+}
+
+.view_cart{
+    position: absolute;
+    display: none;
+
+    &:hover .dishes{
+        display: block;
     }
 }
 
@@ -99,18 +141,20 @@ export default {
         border: 1px solid $buttonColor;
         border-radius: 20px;
         padding: 8px;
-        margin-bottom: 30px;
+        margin-bottom: 70px;
         margin-top: 10px;
         background-color: $buttonColor;
         color: $textColor;
         text-transform: uppercase;
+        width: 16%;
+        font-weight: bold;
     }
 }
 
 .delivery{
     text-align: center;
     height: 50px;
-    font-size: 13px;
+    font-size: 17px;
 
     span{
         padding: 35px;

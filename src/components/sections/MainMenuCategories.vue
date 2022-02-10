@@ -8,6 +8,7 @@
             <div class="categories">
                 <div v-for="(element,index) in categoriesInfo" :key="index">
                     <img :src="element.image" alt="">
+                    <p>{{element.text}}</p>
                 </div>
             </div>
 
@@ -100,12 +101,21 @@ export default {
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
+
+    p{
+        text-align: center;
+        transform: translate(0px, -125px);
+        color: $textColor;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
     
 
     img{
         height: 241px;
         padding: 10px;
-        filter: brightness(80%);
+        filter: brightness(75%);
+        position: relative;
     }
 }
 
@@ -118,6 +128,8 @@ button{
     background-color: $buttonColor;
     color: $textColor;
     text-transform: uppercase;
+    width: 19%;
+    font-weight: bold;
   }
 
 .type_categories{
@@ -125,8 +137,8 @@ button{
     font-size: 40px;
     display: flex;
     justify-content: space-around;
-    margin-bottom: 50px;
-    margin-top: 30px;
+    margin-bottom: 100px;
+    margin-top: 20px;
     text-align: center;
 
     p{
