@@ -8,7 +8,7 @@
                 <ul v-for="(element, index) in info" :key="index">
                     <li>
                     <a href="#" :class="{'active': element.current==true}">{{element.text}}</a>
-                    <div class="arrow" :class="{'active': element.current==true}"><span :class=(element.icon) ></span></div>
+                    <div class="arrow" :class="{'active': element.current==true}"><span class="carrello" :class=(element.icon) ></span></div>
                     </li>
                 </ul>
             </nav>
@@ -111,6 +111,10 @@ nav{
       text-decoration: none;
       font-size: 12px;
       font-weight: 600;
+
+      &:hover {
+        color: $textBigColor;
+      }
     }
   }
 
@@ -121,12 +125,20 @@ nav{
   .arrow{
     display: flex;
     justify-content: center;
-    align-items: center;
   }
 
   .active{
       color: $textBigColor;
       padding: 4px;
+  }
+
+  .carrello{
+    margin-top: 30px;
+
+    &:hover {
+        color: $textBigColor;
+        cursor: pointer;
+      }
   }
 
   .icon_cart{
@@ -172,6 +184,7 @@ button{
 
     &:hover{
       background-color: #bf1e23;
+      cursor: pointer;
     }
   }
 }

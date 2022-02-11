@@ -119,6 +119,11 @@ button{
     text-transform: uppercase;
     width: 19%;
     font-weight: bold;
+
+    &:hover{
+    background-color: #bf1e23;
+    cursor: pointer;
+    }
 }
 
 

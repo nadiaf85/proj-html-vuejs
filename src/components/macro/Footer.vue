@@ -2,10 +2,24 @@
   <footer>
     <div class="container_footer">
       <div class="info_footer">
-        <ul v-for="(element, index) in categories" :key="index">{{element.text}}
-          <li v-for="(element, index) in categories[index].content" :key="index">{{element.text}}{{element.day}}{{element.time}}</li>
-          <!-- <li img :src="require ('../../assets/images/'+element.image+'.png')"></li> -->
-        </ul>
+        <div class="column" v-for="(element, index) in categories" :key="index">
+          <h5>{{element.title}}</h5>
+          <h6>{{element.text}}</h6>
+          <div v-for="(element, index) in categories[index].content" :key="index" :class="{'active': element.current==true}">{{element.text}} 
+            <div class="daytime">
+              <span class="day">{{element.day}}</span> <span class="time">{{element.time}}</span>
+            </div>
+          </div>
+          <div v-for="(element, index) in categories[index].content" :key="index +'j'"><img :src="element.image" alt=""></div>
+        </div>
+         <div class="images">
+              <img class="img1" src="../../assets/images/app-store-badge-200x67.png" alt="">
+              <img class="img2" src="../../assets/images/play-store-badge-200x67.png" alt="">
+          </div>
+        <div class="voucher">
+          <img src="../../assets/images/footer-coupon-200x200.png" alt="">
+          Just Use The Code <br> <span class="first">FIRSTORDER</span> <br> At Checkout
+        </div>
       </div>
       <Logo/>
 
@@ -30,7 +44,7 @@
       </div>
 
       <div class="copyright">
-        <p>© Copyright 2012-2020|Avada Theme by Theme Fusion|All Right Reserved|Powered by WordPress</p>
+        <p>© Copyright 2012-2020|Avada Theme by <span class="fusion">Theme Fusion</span>Theme by Theme Fusion|All Right Reserved|Powered by <span class="word">WordPress</span></p>
       </div>
     </div>
   </footer>
@@ -48,7 +62,7 @@ export default {
     return{
       categories:[
           {
-          text: "Order online",
+          title: "Order online",
           content:[
             {
               text: "Appetizers"
@@ -77,7 +91,7 @@ export default {
           ]
           },
           {
-          text: "Navigate",
+          title: "Navigate",
           content:[
             {
               text: "Home",
@@ -104,7 +118,7 @@ export default {
           ]
           },
           {
-          text: "Information",
+          title: "Information",
           content:[
             {
               text: "My Account"
@@ -115,16 +129,10 @@ export default {
             {
               text: "Privacy Policy"
             },
-            {
-              image: "app-store-badge",
-            },
-            {
-              image: "play-store-badge",
-            },
           ]
           },
           {
-          text: "Opening Hours",
+          title: "Opening Hours",
           content:[
             {
               day: "Mon - ",
@@ -157,13 +165,7 @@ export default {
           ]
           },
           {
-            text: "Voucher",
-            content: [
-              {
-                image: "footer-coupon-200x200",
-                text: "Just Use The Code FIRSTORDER At Checkout"
-              }
-            ]
+            title: "Voucher",
           }
           
       ]
@@ -188,47 +190,89 @@ footer{
   padding: 20px;
 }
 
+.active{
+      color: $textBigColor;
+      padding: 4px;
+  }
+
 .info_footer{
+  color: white;
   display: flex;
   justify-content: space-evenly;
-  width: 100%;
-  height: 100%;
-  margin-top: 60px;
+  position: relative;
+  height: 400px;
 
-  .time{
-    color: $textBigColor;
-  }
-  
-  img{
-    width: 80%;
-  }
+  .column{
+    padding: 20px;
+    line-height: 32px;
 
-  ul{
-    width: 8%;
-    color: white;
-    list-style: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 13px;
-    margin-bottom: 15px;
-    line-height: 25px;
+    h5{
+      text-transform: uppercase;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
 
-    li{
-      color: lightgray;
-      text-transform: capitalize;
-      font-size: 11px;
-      margin: 4px 0;
-      font-weight: 200;
+    h6{
+      font-size: 16px;
+    }
+
+    .day{
       font-weight: bold;
-      }
+    }
+
+    .time{
+      color: $textBigColor;
+      font-weight: bold;
     }
   }
 
+  .daytime{
+    line-height: 21px;
+  }
 
-// .active{
-//       color: $textBigColor;
-//       padding-bottom: 20px;
-//   }
+  .images{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 175px;
+    left: 45%;
+
+    .img1{
+      border: 1px solid white;
+      border-radius: 14px;
+      width: 76%;
+      left: 15px;
+      padding: 3px 3px;
+      margin-bottom: 8px;
+  }
+
+    .img2{
+      border: 1px solid white;
+      border-radius: 14px;
+      width: 76%;
+      left: 15px;
+      padding: 0px 3px;
+    }
+  }
+
+  .voucher{
+    position: absolute;
+    right: 60px;
+    bottom: 292px;
+    height: 50px;
+    width: 200px;
+    text-align: center;
+
+    img{
+      width: 84%;
+    }
+
+    .first{
+      color: $textBigColor;
+      font-weight: bold;
+    }
+  }
+}
 
 .logo{
     display: flex;
@@ -249,6 +293,7 @@ footer{
 
     h5{
       font-weight: 200;
+      margin-bottom: 10px;
     }
 
   input{
@@ -271,6 +316,11 @@ footer{
     border: 1px solid $buttonColor;
     text-transform: uppercase;
     font-weight: bold;
+
+    &:hover{
+      background-color: #bf1e23;
+      cursor: pointer;
+    }
   }
 }
 
@@ -294,6 +344,15 @@ footer{
     color: $textBigColor;
     font-weight: bold;
   }
+
+  .fusion{
+    color: $textColor;
+  }
+
+  .word{
+    color: $textColor;
+  }
 }
+
 
 </style>

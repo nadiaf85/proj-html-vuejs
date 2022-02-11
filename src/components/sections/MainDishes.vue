@@ -9,8 +9,8 @@
     </div>
     <h1>Our Most Popular Dishes</h1>
     <div class="container">
-        <div class="dishes">
-            <div v-for="(element,index) in dishesType" :key="index">
+        <div class="dishes_container">
+            <div class="dishes" v-for="(element,index) in dishesType" :key="index">
                 <img :src="element.image" alt="">
                 <div class="view_cart">
                     <p class="check"><i class="far fa-check-square"></i></p>
@@ -70,14 +70,18 @@ export default {
     }
 }
 
-.dishes{
+.dishes_container{
     display: flex;
     justify-content: center;
+
+    .dishes{
     position: relative;
 
     &:hover .view_cart{
         display: block;
+        cursor: pointer;
     }
+}
 
     .check{
         font-size: 30px;
@@ -96,7 +100,6 @@ export default {
         color: $textColor;
         transform: translate(164px, -326px);
         text-transform: uppercase;
-        font-weight: bold;
     }
 
     img{
@@ -148,6 +151,11 @@ export default {
         text-transform: uppercase;
         width: 16%;
         font-weight: bold;
+
+        &:hover{
+        background-color: #bf1e23;
+        cursor: pointer;
+        }
     }
 }
 
@@ -157,7 +165,7 @@ export default {
     font-size: 17px;
 
     span{
-        padding: 35px;
+        padding: 35px 63px;
         text-transform: uppercase;
         background-color: $textColor;
     }
